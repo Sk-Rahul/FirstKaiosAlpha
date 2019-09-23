@@ -1,12 +1,12 @@
 {
   "version": "1",
   "name": "Slide Shape Alpha",
-  "launch_path": "/index.html",
+  "launch_path": "FirstKaiosAlpha/index.html",
   "description": "For testing",
   "icons": {
-    "16": "/icon/logo3.png",
-    "120": "/icon/logo2.png",
-    "128": "/icon/logo1.png"
+    "16": "FirstKaiosAlpha/icon/logo3.png",
+    "120": "FirstKaiosAlpha/icon/logo2.png",
+    "128": "FirstKaiosAlpha/icon/logo1.png"
   },
   "developer": {
     "name": "rahul",
