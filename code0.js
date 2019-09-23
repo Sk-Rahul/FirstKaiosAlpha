@@ -14,7 +14,7 @@ gdjs.NewSceneCode.eventsList0xb43b0 = function(runtimeScene) {
 {
 gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
 {for(var i = 0, len = gdjs.NewSceneCode.GDNewObjectObjects1.length ;i < len;++i) {
-    if(x == 68){
+    if(x == 1){
     gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(10, 0, 0);
     }
 }
@@ -29,7 +29,7 @@ gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObj
 {
 gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
 {for(var i = 0, len = gdjs.NewSceneCode.GDNewObjectObjects1.length ;i < len;++i) {
-    if(x == 65){
+    if(x == 2){
     gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(-(10), 0, 0);
     }
 }
@@ -39,12 +39,35 @@ gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObj
 
 
 }; //End of gdjs.NewSceneCode.eventsList0xb43b0
-function Start(event)
-{
-    x = event.which;
+function handleKeydown(e) {
+    switch(e.key) {
+      case 'ArrowUp':
+        nav(-1);
+        break;
+      case 'ArrowDown':
+        nav(1);
+        break;
+      case 'ArrowRight':
+          x = 1;
+        nav(1);
+        break;
+      case 'ArrowLeft':
+          x = 2;
+        nav(-1);
+        break;
+    }
+  }
+  document.activeElement.addEventListener('keydown', handleKeydown);
+  function nav (move) {
+    const currentIndex = document.activeElement.tabIndex;
+    const next = currentIndex + move;
+    const items = document.querySelectorAll('.items');
+    const targetElement = items[next];
+    targetElement.focus();
+  }
 
-}
-document.addEventListener("keydown",Start);
+
+
 
 gdjs.NewSceneCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
