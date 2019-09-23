@@ -1,0 +1,31 @@
+{
+  "version": "1",
+  "name": "Slide Shape Alpha",
+  "launch_path": "index.html",
+  "description": "For testing",
+  "icons": {
+    "16": "icon/logo3.png",
+    "120": "icon/logo2.png",
+    "128": "icon/logo1.png"
+  },
+  "developer": {
+    "name": "rahul",
+    "url": "http://"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+    "desktop-notification": {
+      "description": "To show notifications"
+    },
+    "geolocation": {
+      "description": "Marking out user location"
+    },
+    "alarms": {
+      "description": "Scheduling alarms"
+    }
+  },
+  "cursor": false
+}
