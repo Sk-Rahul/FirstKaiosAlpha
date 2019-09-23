@@ -5,7 +5,7 @@ gdjs.NewSceneCode.GDNewObjectObjects2= [];
 gdjs.NewSceneCode.conditionTrue_0 = {val:false};
 gdjs.NewSceneCode.condition0IsTrue_0 = {val:false};
 var MoveRight = false;
-var MoveLeft = true;
+var MoveLeft = false;
 
 gdjs.NewSceneCode.eventsList0xb43b0 = function(runtimeScene) {
 
@@ -40,25 +40,26 @@ gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObj
 
 
 }; //End of gdjs.NewSceneCode.eventsList0xb43b0
-function handleKeydown(e) {
-    switch(e.key) {
-      case 'ArrowUp':
-        nav(-1);
+function handleKeyDown(evt) {
+    switch (evt.key) {
+        case 'SoftLeft':
+            // Action case press left key
+            MoveLeft = true;
         break;
-      case 'ArrowDown':
-        nav(1);
+
+        case 'SoftRight':
+            // Action case press right key
+            MoveRight = true;
         break;
-      case 'ArrowRight':
-        nav(1);
-        MoveRight = true;
-        break;
-      case 'ArrowLeft':
-        nav(-1);
-        MoveLeft = true;
+
+        case 'Enter':
+            // Action case press center key
+            
         break;
     }
-  }
-  document.activeElement.addEventListener('keydown', handleKeydown);
+};
+
+document.addEventListener('keydown', handleKeyDown);
 
 gdjs.NewSceneCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
