@@ -69,6 +69,7 @@ function handleKeydown(e) {
 function test(event)
 {
   x = event.which;
+    alert(x);
 
 }
 document.addEventListener("keydown",test);
