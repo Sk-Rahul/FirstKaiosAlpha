@@ -45,6 +45,7 @@ function handleKeydown(e) {
         nav(-1);
         break;
       case 'ArrowDown':
+            alert("hello");
         nav(1);
         break;
       case 'ArrowRight':
