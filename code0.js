@@ -4,8 +4,7 @@ gdjs.NewSceneCode.GDNewObjectObjects2= [];
 
 gdjs.NewSceneCode.conditionTrue_0 = {val:false};
 gdjs.NewSceneCode.condition0IsTrue_0 = {val:false};
-var MoveRight = false;
-var MoveLeft = false;
+var x;
 
 gdjs.NewSceneCode.eventsList0xb43b0 = function(runtimeScene) {
 
@@ -15,7 +14,7 @@ gdjs.NewSceneCode.eventsList0xb43b0 = function(runtimeScene) {
 {
 gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
 {for(var i = 0, len = gdjs.NewSceneCode.GDNewObjectObjects1.length ;i < len;++i) {
-    if(MoveRight){
+    if(x == 68){
     gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(10, 0, 0);
     }
 }
@@ -30,7 +29,7 @@ gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObj
 {
 gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
 {for(var i = 0, len = gdjs.NewSceneCode.GDNewObjectObjects1.length ;i < len;++i) {
-    if(MoveLeft){
+    if(x == 65){
     gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(-(10), 0, 0);
     }
 }
@@ -40,31 +39,12 @@ gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObj
 
 
 }; //End of gdjs.NewSceneCode.eventsList0xb43b0
-const softkeyCallback = {
-    left: function() { console.log('You click on SoftLeft') },
-    center: function() { console.log('You click on Enter') },
-    right: function() { console.log('You click on SoftRight') }
-};
-function handleKeyDown(evt) {
-    switch (evt.key) {
-        case 'SoftLeft':
-            // Action case press left key
-            softkeyCallback.left();
-        break;
+function Start(event)
+{
+    x = event.which;
 
-        case 'SoftRight':
-            // Action case press right key
-            softkeyCallback.right();
-        break;
-
-        case 'Enter':
-            // Action case press center key
-            softkeyCallback.center();
-        break;
-    }
-};
-
-document.addEventListener('keydown', handleKeyDown);
+}
+document.addEventListener("keydown",Start);
 
 gdjs.NewSceneCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
