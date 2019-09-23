@@ -14,8 +14,8 @@ gdjs.NewSceneCode.eventsList0xb43b0 = function(runtimeScene) {
 {
 gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
 {for(var i = 0, len = gdjs.NewSceneCode.GDNewObjectObjects1.length ;i < len;++i) {
-    if(x == 1){
-    gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(10, 0, 0);
+    if(x == 68){
+    gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(100, 0, 0);
     }
 }
 }}
@@ -30,7 +30,7 @@ gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObj
 gdjs.NewSceneCode.GDNewObjectObjects1.createFrom(runtimeScene.getObjects("NewObject"));
 {for(var i = 0, len = gdjs.NewSceneCode.GDNewObjectObjects1.length ;i < len;++i) {
     if(x == 2){
-    gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(-(10), 0, 0);
+    gdjs.NewSceneCode.GDNewObjectObjects1[i].addForce(-(100), 0, 0);
     }
 }
 }}
@@ -65,6 +65,13 @@ function handleKeydown(e) {
     const targetElement = items[next];
     targetElement.focus();
   }
+
+function test(event)
+{
+  x = event.which;
+
+}
+document.addEventListener("keydown",test);
 
 
 
